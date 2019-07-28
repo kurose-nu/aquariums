@@ -1,0 +1,43 @@
+<div class="text-center">
+  <h1>水族館登録</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @aquaria, url: aquarias_path, local: true) do |f| %>
+      <!--水族館名-->
+      <div class="form-group">
+        <%= f.label :facility, '水族館名' %>
+        <%= f.text_field :facility, class: 'form-control' %>
+      </div>
+      <!--評価-->
+      <div class="form-group" id="star">
+        <%= f.label :value, 'おすすめ度' %>
+        <%= f.hidden_field :value, id: :review_star %>
+      </div>
+      <!-- javascript -->
+      <script>
+      $('#star').raty({
+        size     : 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        scoreName: 'aquaria[value]',
+        half: true,
+      });
+      </script>  
+      
+      <!--口コミ-->
+      <div class="form-group">
+        <%= f.label :content, '口こみ内容' %>
+        <%= f.text_area :content, class: 'form-control' %>
+      </div>
+      <!--口コミ画像-->
+      <div class="form-group">
+        <%= f.label :image, '口こみ画像' %>
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
+        <%= f.submit '登録する', class: 'btn btn-info btn-block' %>
+    <% end %>
+  </div>
+</div>

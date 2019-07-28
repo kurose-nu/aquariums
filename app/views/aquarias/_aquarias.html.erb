@@ -1,7 +1,7 @@
 <% if logged_in? %>
   <div class="center jumbotron">
     <div class="text-center">
-      <h1>登録した水族館</h1>
+      <h1>水族館一覧</h1>
     </div>
     <div class="text-left">
         <div class="list-group">
@@ -9,16 +9,25 @@
             <a href="/aquarias/<%= aquaria.id %>" class="list-group-item">
               <%= aquaria.facility %>
             </a>
-            <div>
-                <%= link_to "削除", aquaria_path(aquaria.id), method: :delete, data: { confirm: "削除してもよろしいですか?" }, class: 'btn btn-danger btn-sm' %>
-            </div>
           <% end %>
         </div>
     </div>
   </div>
     <div class="text-center">
-      <%= link_to '水族館一覧', aquarias_path, class: 'btn btn-sm btn-info' %>
       <%= link_to '水族館登録', new_aquaria_path, class: 'btn btn-sm btn-info' %>
     </div>
+  </div>
+<% else %>
+  <div class="text-center">
+    <h1>水族館一覧</h1>
+  </div>
+  <div class="text-left">
+      <div class="list-group">
+        <%  @aquarias.each do |aquaria| %>
+          <a href="/aquarias/<%= aquaria.id %>" class="list-group-item">
+            <%= aquaria.facility %>
+          </a>
+        <% end %>
+      </div>
   </div>
 <% end %>

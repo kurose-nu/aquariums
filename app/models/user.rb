@@ -9,4 +9,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
     # パスワード付きのログインを良しなにやってくれる
     has_secure_password
+    
+    # 一対多を表現
+    has_many :aquarias
 end
