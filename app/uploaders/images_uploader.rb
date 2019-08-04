@@ -5,7 +5,13 @@ class ImagesUploader < CarrierWave::Uploader::Base
 
 #  if (Rails.env.development?)
   # Choose what kind of storage to use for this uploader:
+    # storage :file
+  if Rails.env.production?
+    include Cloudinary::CarrierWave
+  else
+    # 本番以外ではローカルに保存する
     storage :file
+  end
   # storage :fog
 #  else
 #    include Cloudinary::CarrierWave
