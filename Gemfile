@@ -65,3 +65,9 @@ gem 'dotenv-rails'
 
 gem "gmaps4rails"
 gem "geocoder"
+
+gem 'cloudinary'
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
