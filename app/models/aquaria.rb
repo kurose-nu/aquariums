@@ -9,6 +9,7 @@ class Aquaria < ApplicationRecord
   # 口コミ内容のバリデーション
   validates :content, presence: true, length: { maximum: 200 }
   # 口コミ画像のバリデーション
+  validates :image, presence: true
   mount_uploader :image, ImagesUploader
   
   # 施設名から経度・緯度を取得
