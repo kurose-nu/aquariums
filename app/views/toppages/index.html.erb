@@ -7,7 +7,7 @@
     <div class="text-left">
         <div class="list-group">
           <%  @aquarias.each do |aquaria| %>
-            <a href="/aquarias/<%= aquaria.id %>" class="list-group-item">
+            <a data-turbolinks="false" href="/aquarias/<%= aquaria.id %>" class="list-group-item">
               <%= aquaria.facility %>
             </a>
           <% end %>
@@ -23,7 +23,7 @@
     <div class="text-left">
         <div class="list-group">
           <%  @rankings.each do |aquaria| %>
-            <a href="/aquarias/<%= aquaria.id %>" class="list-group-item">
+            <a data-turbolinks="false" href="/aquarias/<%= aquaria.id %>" class="list-group-item">
               <%= aquaria.facility %>
             </a>
           <% end %>
@@ -45,7 +45,7 @@
     <div class="text-left">
         <div class="list-group">
           <%  @aquarias.each do |aquaria| %>
-            <a href="/aquarias/<%= aquaria.id %>" class="list-group-item">
+            <a data-turbolinks="false" href="/aquarias/<%= aquaria.id %>" class="list-group-item">
               <%= aquaria.facility %>
             </a>
           <% end %>
@@ -61,7 +61,7 @@
     <div class="text-left">
         <div class="list-group">
           <%  @rankings.each do |aquaria| %>
-            <a href="/aquarias/<%= aquaria.id %>" class="list-group-item">
+            <a data-turbolinks="false" href="/aquarias/<%= aquaria.id %>" class="list-group-item">
               <%= aquaria.facility %>
             </a>
           <% end %>
