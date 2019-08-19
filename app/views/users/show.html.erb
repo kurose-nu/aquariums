@@ -10,7 +10,9 @@
               <%= aquaria.facility %>
             </a>
             <div>
-                <%= link_to "削除", aquaria_path(aquaria.id), method: :delete, data: { confirm: "削除してもよろしいですか?" }, class: 'btn btn-danger btn-sm' %>
+                <% if current_user == aquaria.user %>
+                  <%= link_to "削除", aquaria_path(aquaria.id), method: :delete, data: { confirm: "削除してもよろしいですか?" }, class: 'btn btn-danger btn-sm' %>
+                <% end %>
             </div>
           <% end %>
         </div>
