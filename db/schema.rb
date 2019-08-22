@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_22_122510) do
+ActiveRecord::Schema.define(version: 2019_08_19_121646) do
 
   create_table "aquaria", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "facility"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_122510) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
-    t.string "longitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_aquaria_on_user_id"
   end
 
